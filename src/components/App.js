@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import './../styles/App.css';
+import Form from "./Form";
 
 const App = () => {
   const [isLoggedIn , setIsLoggedIn] = useState(false)
@@ -12,13 +13,7 @@ const App = () => {
 
         {!isLoggedIn ? (
           <>
-          <label>Username:</label>
-          <input type="text"/>
-          <br/>
-          <label>Password:</label>
-          <input type="password"/>
-          <br/>
-          <button onClick={() => setIsLoggedIn(true)}>Login</button>
+            <Form set={setIsLoggedIn}/>
           </>
         ):(
           <p>You are logged in!</p>
