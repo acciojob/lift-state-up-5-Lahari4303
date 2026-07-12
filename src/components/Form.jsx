@@ -1,16 +1,22 @@
 import React from 'react'
 
 function Form({set}) {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    set(true);
+  };
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
         <label>Username:</label>
-          <input type="text"/>
+          <input type="text" />
           <br/>
           <label>Password:</label>
-          <input type="password"/>
+          <input type="password" />
           <br/>
-          <button onClick={() => set(true)}>Login</button>
-    </div>
+          <button type="submit">Login</button>
+    </form>
   )
 }
 
